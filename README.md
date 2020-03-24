@@ -1,29 +1,41 @@
-* 專案下載
+## 專案下載
   1. 專案連結：https://github.com/BonioTw/UnityInterview.git
-  2. 使用Unity載入專案
-* 商店介面
-  1. 打開 `Assets/Scenes/1-ShopScene.unity`
-  2. 說明：請參考`Assets/Images/Reference`資料夾的內容
-  3. 完成目標：
-     * 照Reference內的內容做出直向16:9的UI
-     * 點擊shop1右上角的寶箱圖案按鈕會切換為bag1<br>
-       點擊bag1右上角購物圖圖示之按妞會必換為shop1
-     * 繼承`Assets/Scripts/BaseModal.cs`來實做結帳與賣出畫面<br>
-       點擊Shop1下方9個物品會跳出結帳畫面shop2<br>
-       點擊Bag1下方9個物品會跳出結帳畫面bag2
-     * 物品價格及其內容可隨意自訂 但按加減鈕後的值必需正確
+  2. 使用 Unity (Unity 2019.2.21f1) 載入專案
 
-* 方塊動畫與材質
-  1. 打開 `Assets/Scenes/2-CubeScene.unity`
-  2. 說明：該Scene中有個方塊，方塊上有
-     * Animator: 此方塊已綁上CubeAnimator，包含兩個讓方塊旋轉的Animations其中一個是讓方塊沿著X軸旋轉，另一個沿著Y軸旋轉
-     * Material: 方塊的Material是Cube
-  3. 完成目標：
-     * 按鍵盤 "Q" 鍵讓方塊播放Animation沿著X軸旋轉
-     * 按鍵盤 "W" 鍵讓方塊播放Animation沿著Y軸旋轉
-     * 按鍵盤 "E" 鍵讓方塊播放Animation沿著X軸反向旋轉
-     * 按鍵盤 "R" 鍵讓方塊播放Animation沿著Y軸反向旋轉
-     * 按鍵盤 "I" 鍵讓方塊停止動畫
-     * 按鍵盤 "M" 鍵改變方塊材質（變色或變換材質）
-  4. 加分目標：
-     * 在場景中製作UI按鈕達成以上事項
+## 實作道具商店介面
+### 配置：
+  1. 打開 `Assets/Scenes/ShopScene.unity`
+  2. 設定參考解析度為 750 x 1334（與 Reference 相同）
+  3. 圖片素材在 `Assets/Images` 或 `Assets/Resources` 資料夾中
+  4. 道具資料在 `Assets/StreamingAssets/ShopItems.json` 檔案中
+
+### 請按照參考圖，實作以下三個目標：
+#### 【目標一】：實作道具商店介面 - 3 x 3 道具商店
+  * 參考 `Assets/Images/Reference/Reference_Step1.png` 實作商店基本介面框架（不需要道具資料）<br><br><img width="250" src="https://user-images.githubusercontent.com/6658966/77414529-28af8880-6dfc-11ea-92b1-8c51b08ecb0c.png">
+
+#### 【目標二】：串接 JSON 道具資料，顯示在道具商店中
+  * 讀取並解析 `Assets/StreamingAssets/ShopItems.json` 的資料
+  * 參考 `Assets/Images/Reference/Reference_Step2.png`，將解析完成的資料顯示在道具商店中<br><br><img width="250" src="https://user-images.githubusercontent.com/6658966/77414904-abd0de80-6dfc-11ea-8f77-44d75f55a940.png">
+
+  * 道具圖片位於 `Assets/Resources/Images/ShopItems` 中，圖片名稱與道具資料的 `name` 欄位相同
+  * 提示：可使用 `UnityEngine.JsonUtility` 解析 JSON 格式
+
+#### 【目標三】：點擊商店道具，彈出視窗顯示道具詳細資訊
+  * 參考 `Assets/Images/Reference/Reference_Step3.png` 與 `Assets/Images/Reference/Reference_Step3.gif`，實作商店道具詳細資訊視窗<br><br><img width="250" src="https://user-images.githubusercontent.com/6658966/77415202-12ee9300-6dfd-11ea-9545-1ed6d156775b.gif">
+
+  * 詳細視窗顯示的道具資訊為使用者點擊的道具
+  * 商店道具詳細資訊視窗可以點擊右上角的「x」關閉
+
+#### 【加分目標】：為商店道具詳細資訊「彈出」與「關閉」增加 Bounce 動畫
+
+## 附件
+* `Assets/StreamingAssets/ShopItems.json` 參考格式：
+```js
+{
+  "items": [
+    { "id": 1, "name": "terrain_mountain", "title": "造山者", "description": "...", "money": 500 },
+    { "id": 2, "name": "terrain_golden_statue", "title": "黃金女神", "description": "...", "money": 5000 },
+    ...
+  ]
+}
+```

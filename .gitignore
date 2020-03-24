@@ -23,6 +23,11 @@
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
 
+# Rider
+.idea/
+Assets/Plugins/Editor/JetBrains
+Assets/Plugins/Editor/JetBrains.meta
+
 # OS Generated
 .DS_Store
 .DS_Store?
