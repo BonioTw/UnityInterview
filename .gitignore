@@ -28,6 +28,9 @@ sysinfo.txt
 Assets/Plugins/Editor/JetBrains
 Assets/Plugins/Editor/JetBrains.meta
 
+# Visual Studio
+.vs/
+
 # OS Generated
 .DS_Store
 .DS_Store?
