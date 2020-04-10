@@ -1,6 +1,8 @@
 ## 作業說明
-  1. 實作寵物找尋主人小遊戲（地圖障礙物尋路）
-  2. 使用 Unity 3D 實作（建議使用 Unity 2019.2.21f1）
+  1. 請到專案連結（Branch `assignment/2020`）下載專案：https://github.com/BonioTw/UnityInterview/tree/assignment/2020
+  （或執行 `git clone --single-branch --branch assignment/2020 https://github.com/BonioTw/UnityInterview.git`）
+  2. 實作寵物找尋主人小遊戲（地圖障礙物尋路）
+  3. 使用 Unity 3D 實作（建議使用 Unity 2019.2.21f1）
 
 ## 遊戲說明
 * 目標：在矩形的地圖（圖片以 10 x 10 地圖為例）上，寵物（左下角，藍色圓柱）需要越過重重障礙物（黃色方塊），找尋路徑（綠色方塊代表可走路徑）回到主人（右上角，粉紅色圓柱代表）身邊。
